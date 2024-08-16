@@ -12,7 +12,11 @@ import PetDetailsNotFound from "./pages/petDetailsNotFound";
 import Root from "./components/root";
 
 const appRouter = createBrowserRouter(
-  createRoutesFromElements(<Route path="/" element={<Root />}></Route>)
+  createRoutesFromElements(
+    <Route path="/" element={<Root />}>
+      <Route index element={<HomePage />} />
+    </Route>
+  )
 );
 
 function App() {
