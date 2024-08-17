@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from "react";
 
-import { useParams } from "react-router-dom";
+import { Navigate, useParams } from "react-router-dom";
 
 import { getPetDetails } from "../../api/petfinder";
 import Hero from "../../components/hero";
-
-// Import Navigate
 
 const PetDetailsPage = () => {
   const [data, setData] = useState();
@@ -34,7 +32,7 @@ const PetDetailsPage = () => {
         <h3>Loading...</h3>
       ) : error ? (
         <div>
-          {/* Redirect to /pet-details-not-found if there was an error! */}
+          <Navigate to="/pet-details-not-found" />
         </div>
       ) : (
         <main>
